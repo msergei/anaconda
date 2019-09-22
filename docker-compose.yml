@@ -6,11 +6,12 @@ volumes:
 services:
 
   py:
-    image: continuumio/anaconda:2019.07-alpine
+    build:
+      context: ./
     volumes:
       - notes:/opt/notebooks
-    command: sh -c "/opt/conda/bin/conda install jupyter -y --quiet && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser"
+    container_name: jupyter
+    command: /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --allow-root --port=8888 --no-browser
     restart: unless-stopped
     ports:
       - 8888:8888/tcp
-

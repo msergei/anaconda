@@ -1,9 +1,12 @@
-# anaconda-compose
-Docker-compose file for docker anaconda
+# anaconda
+Docker-compose file for docker anaconda3
 
 ## How to use?
 
- - docker-compose up -d
+#### Up service:
 
- - open browser url: http://localhost:8888
+docker-compose up -d
 
+### Print url and copy it to browser:
+
+docker logs jupyter
