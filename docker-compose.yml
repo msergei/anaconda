@@ -6,8 +6,7 @@ volumes:
 services:
 
   py:
-    build:
-      context: ./
+    image: continuumio/anaconda3:2019.10-alpine
     volumes:
       - notes:/opt/notebooks
     container_name: jupyter
